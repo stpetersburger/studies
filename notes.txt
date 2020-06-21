@@ -1,0 +1,18 @@
+##CLI
+
+
+
+
+
+##Git
+
+git clone https://github.com/stpetersburger/studies
+
+git init
+git remote add origin https://github.com/stpetersburger/studies.git
+git pull origin master (git pull --allow-unrelated-histories origin master)
+
+
+git add .  (adds all new files)
+git add -u (updates tracking for files that changed names or were deleted) 
+git add -A (all above) 
