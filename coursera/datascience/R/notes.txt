@@ -1,0 +1,22 @@
+##Using R
+
+getwd() - get the name of the current working directory (useful for addressing the files stored there by name.ext)
+
+setwd("") - setting the folder
+
+dir() - list the content of the current folder
+
+
+source("scripts/myfirstcode.R") - to load the functions from the script myfirstcode.R
+
+ls() shows the functions loaded (from the myfirstcode.R, here)
+
+packageVersion("PACKAGE") - versoion of a package
+
+library(PACKAGE) - load the package
+
+c() - creating a vector ()
+
+<- is the way of equality
+
+TAB works with the first 2 letters of a variable - to check the value
