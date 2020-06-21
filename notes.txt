@@ -50,3 +50,13 @@ git push
 git checkout -b BRANCHNAME
 git branch - switch to branch
 git checkout master - switch to master
+
+##Markdown
+
+## heading1
+### heading2
+
+list
+*1st item
+*2d item
+*3d item
