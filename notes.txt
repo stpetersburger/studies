@@ -26,7 +26,7 @@ mn FILE1 FILE2 - renaming the FILE1 into FILE2
 
 echo - printing out (contents, for example)
 
-date
+date - printing the current date
 
 
 
@@ -45,3 +45,8 @@ git add -u (updates tracking for files that changed names or were deleted)
 git add -A (all above)
 
 git commit -m "message"
+git push
+
+git checkout -b BRANCHNAME
+git branch - switch to branch
+git checkout master - switch to master
