@@ -6,6 +6,7 @@ setwd("") - setting the folder
 
 dir() - list the content of the current folder
 
+?FUNCTION - a help about the FUNCTION
 
 source("scripts/myfirstcode.R") - to load the functions from the script myfirstcode.R
 
@@ -20,3 +21,19 @@ c() - creating a vector ()
 <- is the way of equality
 
 TAB works with the first 2 letters of a variable - to check the value
+
+list.files() - list all the files in the current directory
+
+args(FUNCTION) - to check the arguments of the function
+
+dir.create("FILE") - creating a directory
+
+file.create("NAME") - create file
+
+file.exists("FILE") - check if a file exists
+
+file.info("") - info about the file
+
+file.rename("","") - renaming a file; same as file.copy()
+
+dir.create(file.path("testdir2","testdir3"), recursive=TRUE) - creating nested directories
