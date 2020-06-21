@@ -60,3 +60,20 @@ list
 *1st item
 *2d item
 *3d item
+
+##R packages
+
+CRAN is the source (others specific available too);
+
+available.packages() - to check the available packages (a <- available.packages(); head(rownames(a),3) - the names of the first 3 available packages);
+
+install.packages("NAME") - to download and install a package - install.packages(c("name1","name2","name3"));
+
+can be installed manually via menu;
+
+from a particular source (not CRAN):
+biocLite() OR biocLite(c("name1","name2"))
+
+load packages with the dependencies:
+library(ggplot2) - no quotes here - loads the packages
+search() - will print all, what is the part of ggplot2
