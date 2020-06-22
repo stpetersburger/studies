@@ -54,7 +54,7 @@ length() - length of a sequence
 
 rep(c(0,1,2), times=10) - repeating vector
 
-rep(c(0,1,2), each=10) - repeating each numner in the vector 10 times
+rep(c(0,1,2), each=10) - repeating each number in the vector 10 times
 
 ##Vectors
 
@@ -67,3 +67,75 @@ paste(my_char, collapse = " ") - concatenation of a vector members with a " " in
 LETTERS - predefined vector of letters in R
 
 ##Missing values
+
+NA - is for missing or not available value (is not a value, but a placeholder)
+NaN - not a number
+
+rep(NA,1000); rnorm(1000) - vectors of 1000 values of NA and 1000 random values of a normal distribution
+
+sample(VECTOR, N) - get N random elements of VECTOR
+
+is.na() - if NAs are in vectors
+
+sum(VECTOR) - if VECTOR is of TRUO/FALSE - it will be used as 1/0 - this, sum will give the number of null values
+
+##Vectors
+
+Subsets - VECTOR[n1,n2] - all the elements from element number n1 to element number n2
+3
+x[is.na(x)], x[!is.na(x)] - vectors of elements: NA and not NA - (x[!is.na(x)&x>0] - all not NA and positive elements)
+
+y[y>0] - vector of all elements > 0
+
+vect<-c(foo=11,bar=2,norf=NA) - name the columns
+
+x[c(-2, -10)] - exclude 2d and 10th elements
+
+names(vect) - to get the names of the vector elements
+
+names(vect2)<-c("foo","bar","norf") - assign names
+compare 2 vectors - identical(vect1, vect2)
+
+vect[c("foo","bar")] - get the values of columns foo and bar
+
+##Matrices and Data frames
+
+matrices can contain single type of data; data frames - many different classes of Data
+
+dim(VECTOR)
+attributes(VECTOR)
+
+dim(VECTOR)<-c(N1,N2) - assigning attributes
+
+class(VECTOR) - gives a class of the VECTOR
+
+matrix(data,Nlines, Ncols) - create matrix
+
+data.frame(names,data)
+
+colnames(my_data)<-cnames - assigning column names to a data frame
+
+##Control structures
+
+if () else if {} else {}
+
+"LOOP"  for (i in 1:10) {}
+
+for{i in 1:4}; for{i in seq_along}; for{something in VECTOR}
+
+can be nested with ncol, nrow
+
+"WHILE"
+evaluation of conditions from left to right
+while {something < N} {}
+
+"REPEAT, NEXT, BREAK"
+
+REPEAT is used to use BREAK
+NEXT is used to skip a number of iterations if(i<=20) {next}
+
+"FUNCTIONS"
+
+add2<-function(x,y){
+      x+y
+}
