@@ -26,6 +26,8 @@ list.files() - list all the files in the current directory
 
 args(FUNCTION) - to check the arguments of the function
 
+##Directories and files
+
 dir.create("FILE") - creating a directory
 
 file.create("NAME") - create file
@@ -37,3 +39,31 @@ file.info("") - info about the file
 file.rename("","") - renaming a file; same as file.copy()
 
 dir.create(file.path("testdir2","testdir3"), recursive=TRUE) - creating nested directories
+
+##Sequences
+
+':' is always of step 1 (seq(along.with = my_seq) - same: the sequence of the length of my_seq with step 1  same as seq_along(my_seq))
+
+rep(0, times=40) - vector of zeros, length 40
+
+a:b, seq(a,b, by=step) - from a to be, incremented with 1
+
+seq(a,b,length=n) - increment here doesn't matter
+
+length() - length of a sequence
+
+rep(c(0,1,2), times=10) - repeating vector
+
+rep(c(0,1,2), each=10) - repeating each numner in the vector 10 times
+
+##Vectors
+
+atomic (one data type) and lists
+
+vector<1 - checking if every member of the vector is less than 1: TRUE if yes, FALSE - if no
+
+paste(my_char, collapse = " ") - concatenation of a vector members with a " " in between the members
+
+LETTERS - predefined vector of letters in R
+
+##Missing values
