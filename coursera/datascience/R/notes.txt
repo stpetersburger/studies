@@ -139,3 +139,17 @@ NEXT is used to skip a number of iterations if(i<=20) {next}
 add2<-function(x,y){
       x+y
 }
+
+##Logic
+
+1: FALSE && 6 >= 6 || 7 >= 8 || 50 <= 49.5
+2: 6 >= -9 && !(6 > 7) && !(!TRUE)
+3: FALSE || TRUE && 6 != 4 || 9 > 4
+4: !(8 > 4) ||  5 == 5.0 && 7.8 >= 7.79
+
+
+which()
+any()
+xor()
+| and ||
+& and &&
