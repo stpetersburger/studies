@@ -77,12 +77,12 @@ sample(VECTOR, N) - get N random elements of VECTOR
 
 is.na() - if NAs are in vectors
 
-sum(VECTOR) - if VECTOR is of TRUO/FALSE - it will be used as 1/0 - this, sum will give the number of null values
+sum(VECTOR) - if VECTOR is of TRUE/FALSE - it will be used as 1/0 - this, sum will give the number of null values
 
 ##Vectors
 
 Subsets - VECTOR[n1,n2] - all the elements from element number n1 to element number n2
-3
+
 x[is.na(x)], x[!is.na(x)] - vectors of elements: NA and not NA - (x[!is.na(x)&x>0] - all not NA and positive elements)
 
 y[y>0] - vector of all elements > 0
@@ -153,3 +153,23 @@ any()
 xor()
 | and ||
 & and &&
+
+##FUNCTIONS
+--Passing a functions as an argument
+evaluate <- function(func, dat){
+   func(dat)
+   }
+
+evaluate(function(x){x+1}, 6)
+[1] 7
+
+args <-list(...)
+
+"%p%" <- function(left,right){ # Remember to add arguments!
+  paste(left,right) - binary
+
+##Dates and Times
+
+class() ; unclass()
+
+VARIABLE$min
