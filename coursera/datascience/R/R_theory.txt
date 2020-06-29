@@ -173,3 +173,54 @@ args <-list(...)
 class() ; unclass()
 
 VARIABLE$min
+
+##lapply, sapply, apply, tapply, mapply
+
+lapply - loop over a list and evaluate a function on each element
+
+sapply - same as lapply, but simplifies the results
+
+apply - apply a function over the margins of an array (summaries of matrices)
+
+tapply - apply a function over subsets of a vector
+
+mapply - multivariate version of lapply
+
+
+#LAPPLY (x - list, function, ...) - always returns a list
+
+if x is not a list - it will be as.list
+ --- x<-list(a=1:5,b=rnorm(10))
+ --- lapply(x,mean) --  each element of the x list will be calculated a mean;
+ result will be the vector of length 2 with the 2 means
+
+#SAPPLY (same as LAPPLY, but the with the simplified results)
+
+if result is a list, where every element is length 1 - the vector will be returned
+
+if result is a list, where every element is vector of the same length (>1), a matrix is returned
+
+list - in all the other cases
+
+#APPLY (x, MARGIN, FUN, ...) - is used to evaluate a function (oft anonymous one) over the margins of an array
+
+for the rows or columns of a matrix
+
+can be used with general arrays - tking average of an array or Matrices
+
+faster than a LOOP
+
+MARGIN - integer vector, indicating, which margins should be "retained"
+
+matrix(range, m, n) - m - num of rows, n - num of columns - 1 is an index for rows, 2 - for columns
+if applying a function against rows/columns of a matrix
+
+ #MAPPLY (FUN, ..., MoreArgd(list of args to FUN) = NULL, SIMPLIFY (for result) = TRUE, )
+ multivariate apply of sorts which applies a function in parallel over a set of arguments
+
+ can take multiple lists
+
+ #TAPPLY (x, INDEX (factor or list of factors), FUN, ...)
+
+ apply a function over subset of a vector
+ ... - contains other arguments for FUN
