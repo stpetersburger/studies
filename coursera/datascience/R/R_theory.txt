@@ -174,11 +174,20 @@ class() ; unclass()
 
 VARIABLE$min
 
+##SPLIT-APPLY-COMBINE strategy
+Each of the *apply functions will SPLIT up some data into smaller pieces, APPLY a function to each piece, then COMBINE the results.
 ##lapply, sapply, apply, tapply, mapply
 
 lapply - loop over a list and evaluate a function on each element
 
+cls_list<-lapply(flags,class) - apply class to any element of flags data.frame
+
 sapply - same as lapply, but simplifies the results
+simplified way of lapply
+
+In general, if the result is a list where every element is of length one, then sapply() returns a vector. If the result is a list where
+| every element is a vector of the same length (> 1), sapply() returns a matrix. If sapply() can't figure things out, then it just returns a
+| list, no different from what lapply() would give you
 
 apply - apply a function over the margins of an array (summaries of matrices)
 
@@ -206,11 +215,11 @@ list - in all the other cases
 
 for the rows or columns of a matrix
 
-can be used with general arrays - tking average of an array or Matrices
+can be used with general arrays - taking average of an array or Matrices
 
 faster than a LOOP
 
-MARGIN - integer vector, indicating, which margins should be "retained"
+MARGIN - integer vector, indicating, which margins should be "retained" (1 - rows; 2 - columns)
 
 matrix(range, m, n) - m - num of rows, n - num of columns - 1 is an index for rows, 2 - for columns
 if applying a function against rows/columns of a matrix
@@ -224,3 +233,41 @@ if applying a function against rows/columns of a matrix
 
  apply a function over subset of a vector
  ... - contains other arguments for FUN
+
+
+ #SPLIT(x,f,drop="FALSE",...) - always returns a list
+ splits vector or other objects into groups, determined by a factor or lists
+
+ s<-split(airquality, airquality$Month)
+ lapply(s, function(x) colMeans(x[,c("Ozone,"Solar.R","Wind")]))
+
+ ##Debugging
+
+ message, warning, error, conditions
+
+ invisible(x) - executes silently, does not return the result after a function execution
+
+ traceback, debug, browser, trace, recover
+
+ #VAPPLY - (same as sapply, but the outcome is being specified, the format)
+
+ If we wish to be explicit about the format of the result we expect, we can use vapply(flags, class, character(1)). The 'character(1)'
+argument tells R that we expect the class function to return a character vector of length 1 when applied to EACH column of the flags
+dataset. Try it now.
+
+apply() as being 'safer' than sapply(), since it requires you to specify the format of the output in advance, instead of
+just allowing R to 'guess' what you wanted. In addition, vapply() may perform faster than sapply() for large datasets. However, when doing
+data analysis interactively (at the prompt), sapply() saves you some typing and will often be good enough
+
+#TAPPLY (X, INDEX (data division factor), FUN = NULL, ..., default = NA, simplify = TRUE)
+
+If you take the arithmetic mean of a bunch of 0s and 1s, you get the proportion of
+1s. Use tapply(flags$animate, flags$landmass, mean) to apply the mean function to
+the 'animate' variable separately for each of the six landmass groups, thus giving
+us the proportion of flags containing an animate image WITHIN each landmass group.
+
+> tapply(flags$animate,flags$landmass,mean)
+        1         2         3         4         5         6
+0.4193548 0.1764706 0.1142857 0.1346154 0.1538462 0.3000000
+
+with(mtcars,tapply(mpg,cyl,mean))
