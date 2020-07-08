@@ -1,0 +1,71 @@
+##CLI (https://www.coursera.org/learn/data-scientists-tools/lecture/FhvlV/command-line-interface)
+
+command flags (preceding with -) arguments
+
+pwd   - print the current working directory
+clear - clear all the previous typed
+
+ls (ls -a) (ls -al) - list the content of the directory
+
+cd (cd ..) (cd \d  - goes to disk d) - roaming around the directories
+
+mkdir - make directory
+
+cp FILE PATH(DIRECTORY) - copy the FILE into directory
+
+cp -r DIRECTORY1 DIRECTORY2 - copy contents of the directories (from 1 to 2)
+
+touch FILE - create file
+rm FILE - removing files
+
+rm - r DIRECTORY (rm -rf) - removing directories
+
+mv FILE DIRECTORY - moving the FILE into DIRECTORY
+
+mn FILE1 FILE2 - renaming the FILE1 into FILE2
+
+echo - printing out (contents, for example)
+
+date - printing the current date
+
+
+
+
+##Git (https://www.coursera.org/learn/data-scientists-tools/lecture/BTILd/basic-git-commands)
+
+git clone https://github.com/stpetersburger/studies
+
+git init
+git remote add origin https://github.com/stpetersburger/studies.git
+git pull origin master (git pull --allow-unrelated-histories origin master)
+
+
+git add .  (adds all new files)
+git add -u (updates tracking for files that changed names or were deleted)
+git add -A (all above)
+
+git commit -m "message"
+git push
+
+git checkout -b BRANCHNAME
+git branch - switch to branch
+git checkout master - switch to master
+
+##Markdown
+
+## heading1
+### heading2
+
+list
+*1st item
+*2d item
+*3d item
+
+##Listing the commits hashes
+
+git ls-remote git://github.com/stpetersburger/studies.git
+
+##Reverting
+git revert commit hashes
+
+to exit editor :x!
