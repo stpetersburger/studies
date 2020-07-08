@@ -3,7 +3,7 @@
 command flags (preceding with -) arguments
 
 pwd   - print the current working directory
-clear - clear all the previous typed
+clear - clear all the prsevious typed
 
 ls (ls -a) (ls -al) - list the content of the directory
 
@@ -12,7 +12,7 @@ cd (cd ..) (cd \d  - goes to disk d) - roaming around the directories
 mkdir - make directory
 
 cp FILE PATH(DIRECTORY) - copy the FILE into directory
-
+s
 cp -r DIRECTORY1 DIRECTORY2 - copy contents of the directories (from 1 to 2)
 
 touch FILE - create file
